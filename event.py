@@ -17,7 +17,17 @@ class Event:
     def __repr__(self):
         return f"Event=Win:{self.outcome_win};Lose:{self.outcome_loose};({self.outcome_win._percent:.2f},{self.outcome_loose._percent:.2f})"
 
+    def get_american_win_p(self):
+        return self.outcome_win._fzy_american_positive
 
+    def get_american_loss_p(self):
+        return self.outcome_loss._fzy_american_positive
+
+    def get_american_win_n(self):
+        return self.outcome_win._fzy_american_negitive
+
+    def get_american_loss_n(self):
+        return self.outcome_loss._fzy_american_negitive
 
 class _Event_Odds:
 
