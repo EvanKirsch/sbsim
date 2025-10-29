@@ -2,14 +2,9 @@
 
 import random
 import math
-from odds import *
+from event import Event
 
-class Abstract_Book:
-  pass
-
-
-
-class Baseline_Book(Abstract_Book):
+class Baseline_Book:
 
   def __init__(self):
     self.odds = []
@@ -23,11 +18,14 @@ class Baseline_Book(Abstract_Book):
 
 
 
-class Book(Abstract_Book):
+class Book:
 
   def __init__(self, baseline_book):
     self.softness = random.random()
     self.book_odds = self.generate_book_odds(baseline_book.odds)
+
+  def __repr__(self):
+    return f"{self.softness:.2f}:{self.book_odds}"
 
 
   def generate_book_odds(self, baseline_odds):
@@ -51,6 +49,4 @@ class Book(Abstract_Book):
     else:
       odds_event_a = event_odds[0] - varriation_adjustment
       odds_event_b = event_odds[1] + varriation_adjustment
-    possible_event_odds = [Odds(odds_event_a), Odds(odds_event_b), Odds(0.002)]
-
-    return Event(possible_event_odds)
+    return Event(odds_event_a, odds_event_b, 0.002)

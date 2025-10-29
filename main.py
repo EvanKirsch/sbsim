@@ -10,4 +10,4 @@ my_books = []
 for i in range(5):
   my_book = Book(my_baseline)
   my_books.append(my_book)
-  print(my_book.book_odds)
+  print(my_book)
