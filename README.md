@@ -1,2 +1,2 @@
 ### sbsim
-simiulation software for sports books
+WIP simiulation software for sports books
