@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
 from book import Book
-import statistics
+import util.statistics as statistics
 
 def find_arbitrages(event_ids, my_books):
     arbitrages = {}
     for event_id in event_ids:
-        arbitrages[event_id] = Arbitrage(event_id)
+        arbitrages[event_id] = _Arbitrage(event_id)
 
         for my_book in my_books:
             my_event = my_book.book_odds[event_id]
@@ -26,7 +26,7 @@ def find_arbitrages(event_ids, my_books):
     return arbitrages
 
 
-class Arbitrage:
+class _Arbitrage:
 
     def __init__(self, event_id):
         self.event_id = event_id

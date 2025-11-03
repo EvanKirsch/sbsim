@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import random
-import statistics
+import util.statistics as statistics
 
 class Event:
 

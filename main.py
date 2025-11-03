@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 from book import *
-from arbitrage import find_arbitrages
+from util.arbitrage import find_arbitrages
 
 my_baseline = Baseline_Book()
 my_baseline.generate_book(2)
